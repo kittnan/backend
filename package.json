@@ -1,19 +1,25 @@
 {
-  "name": "monitoring_factory_backend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kittnan/kittnan-kittnan-monitoring_factory_backend.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kittnan/kittnan-kittnan-monitoring_factory_backend/issues"
-  },
-  "homepage": "https://github.com/kittnan/kittnan-kittnan-monitoring_factory_backend#readme"
+    "name": "monitoring_factory_backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "api.js",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app.js"
+    },
+    "dependencies": {
+        "basic-ftp": "^4.6.6",
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "mongoose": "^5.12.2"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7",
+        "xlsx": "^0.16.9"
+    }
 }
