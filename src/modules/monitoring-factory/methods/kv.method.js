@@ -31,9 +31,9 @@ methods.interval = async() => {
 
     timer = setInterval(async() => {
         const second = new Date().getSeconds();
-        console.log(second);
+        // console.log(second);
 
-        if (second % 5 == 0) {
+        if (second % 20 == 0) {
             methods.kvFTP();
         }
         if (second % 15 == 0) {
@@ -42,8 +42,11 @@ methods.interval = async() => {
         if (second % 30 == 0) {
             methods.reconstruct();
         }
+        // methods.kvFTP()
     }, 1000);
 };
+
+
 
 methods.kvFTP = () => {
     let client = new Client();
@@ -57,16 +60,11 @@ methods.kvFTP = () => {
     client
         .access(accessOption)
         .then(async(res) => {
-            console.log(res);
-            // await client.ensureDir(`/MMC/${directoriesName[0]}`);
-            // await client.clearWorkingDir().then((res1) => {
-            //     console.log(res1);
-            //     client.close();
-            // });
             for (let index = 0; index < directoriesName.length; index++) {
                 const fileList = await client.list(`/MMC/${directoriesName[index]}`);
-                console.log(fileList);
                 if (fileList.length > 0) {
+                    console.log(directoriesName)
+                    console.log(directoriesName[index], fileList);
                     await client
                         .downloadTo(
                             `D:\\MonitoringFactoryCSV\\data\\${directoriesName[index]}.csv`,
